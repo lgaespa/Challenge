@@ -11,7 +11,6 @@ import { setTagState } from "../../redux/actions/getPosts";
 
 const PostCard = ({ props }) => {
 
-    let props2 = props
     const dispatch = useDispatch()
 
     const [open, setOpen] = useState(false);
@@ -29,7 +28,6 @@ const PostCard = ({ props }) => {
     }
 
     let tagState = useSelector(store => store.postReducer.tag)
-    console.log("PROPS", props)
 
     if (tagState.length !== 0 && !props.tags.includes(tagState)) {
         return (
@@ -54,6 +52,11 @@ const PostCard = ({ props }) => {
                             </h3>
                         </div>
                     </button>
+                    <div>
+                        {
+                            props.link && <button className="linkButton" href="https://dummyapi.io/documentation/static-data-api">Enlace</button>
+                        }
+                    </div>
                 </div>
 
                 <div className="PostCard_likesComments">
@@ -65,7 +68,6 @@ const PostCard = ({ props }) => {
                         </div>
                         <div style={{ display: "flex", alignItems: "center" }}>
                             <button className="modalButton" onClick={onOpenModal2}>
-                                {/* {props.likes} */}
                                 <GoComment style={{ marginLeft: "3px" }} />
                             </button>
                         </div>
@@ -91,7 +93,6 @@ const PostCard = ({ props }) => {
                             </button>
                         ))
                     }
-
                 </div>
 
             </div>

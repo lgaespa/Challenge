@@ -34,9 +34,12 @@ function App() {
           INSTA-DOGS
           </h1>
       </div>
-      <button onClick={() => setTagHandler("")}>
-        Limpiar busqueda
+      {
+        tagState.length !== 0 &&
+        < button onClick={() => setTagHandler("")}>
+          Limpiar filtro
      </button>
+      }
       <div className="postContainer">
         {
           cards?.map(e => (
@@ -44,7 +47,7 @@ function App() {
           ))
         }
       </div>
-    </div>
+    </div >
   );
 }
 

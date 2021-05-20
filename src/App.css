@@ -27,7 +27,12 @@
 .postContainer {
   width: 100vw;
   height: auto;
-  display: inline-block;
+  /* display: inline-block; */
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+
   text-align: center;
   vertical-align: top;
 
