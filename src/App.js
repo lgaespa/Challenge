@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { getPost } from './redux/actions/getPosts';
+import { getPost, setTagState } from './redux/actions/getPosts';
 import './App.css';
 import PostCard from './components/PostCards/PostCard';
 
@@ -10,6 +10,14 @@ function App() {
 
   let post = useSelector(store => store.postReducer.post)
   let cards = post?.data?.data
+
+  const setTagHandler = (e) => {
+    console.log(e)
+    dispatch(setTagState(e))
+  }
+
+  let tagState = useSelector(store => store.postReducer.tag)
+  console.log(tagState)
 
 
   useEffect(() => {
@@ -26,6 +34,9 @@ function App() {
           INSTA-DOGS
           </h1>
       </div>
+      <button onClick={() => setTagHandler("")}>
+        Limpiar busqueda
+     </button>
       <div className="postContainer">
         {
           cards?.map(e => (

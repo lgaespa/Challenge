@@ -68,7 +68,7 @@
 
 .PostCard_tagsContainer {
   display: inline-block;
-  height: 17px;
+  height: 23px;
   padding: 6px;
   width: auto;
   border-radius: 10px;
@@ -76,6 +76,12 @@
   font-size: 14px;
   margin-left: 6px;
   margin-bottom: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.PostCard_tagsContainer:hover {
+  background-color: rgb(185, 185, 185);
 }
 
 /* modal button */

@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 export const SAVE_POST = 'SAVE_POST';
+export const SET_TAG = 'SET_TAG';
 export const SAVE_COMMENTS = 'SAVE_COMMENTS';
+
 const BASE_URL = 'https://dummyapi.io/data/api';
 const APP_ID = '60a573ff453bff73e887ec5a';
 
@@ -54,6 +56,14 @@ export const getComments = (id) => {
 export const saveComments = (params) => {
     return {
         type: SAVE_COMMENTS,
+        payload: params
+    }
+}
+
+
+export const setTagState = (params) => {
+    return {
+        type: SET_TAG,
         payload: params
     }
 }

@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import "./PostCard.css"
 import { IoIosHeartEmpty } from "react-icons/io";
+import { useDispatch, useSelector } from 'react-redux';
 import { GoComment } from "react-icons/go";
-
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
 import Profile from '../Profile/Profile';
 import Comments from '../Comments/Comments';
+import { setTagState } from "../../redux/actions/getPosts";
 
 const PostCard = ({ props }) => {
 
+    let props2 = props
+    const dispatch = useDispatch()
+
     const [open, setOpen] = useState(false);
     const [open2, setOpen2] = useState(false);
-
 
     const onOpenModal = () => setOpen(true);
     const onCloseModal = () => setOpen(false);
@@ -20,7 +23,21 @@ const PostCard = ({ props }) => {
     const onOpenModal2 = () => setOpen2(true);
     const onCloseModal2 = () => setOpen2(false);
 
-    // console.log(props)
+    const setTagHandler = (e) => {
+        console.log(e)
+        dispatch(setTagState(e))
+    }
+
+    let tagState = useSelector(store => store.postReducer.tag)
+    console.log("PROPS", props)
+
+    if (tagState.length !== 0 && !props.tags.includes(tagState)) {
+        return (
+            <div>
+            </div>
+        )
+    }
+
     return (
         <div className="PostCard_cardContainer">
             <div>
@@ -69,9 +86,9 @@ const PostCard = ({ props }) => {
                 <div className="PostCard_tagsRow">
                     {
                         props.tags?.map(e => (
-                            <div className="PostCard_tagsContainer">
+                            <button onClick={() => setTagHandler(e)} className="PostCard_tagsContainer">
                                 {e}
-                            </div>
+                            </button>
                         ))
                     }
 

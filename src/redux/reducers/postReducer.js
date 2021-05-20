@@ -1,8 +1,9 @@
-import { SAVE_POST, SAVE_COMMENTS } from "../actions/getPosts";
+import { SAVE_POST, SAVE_COMMENTS, SET_TAG } from "../actions/getPosts";
 
 const initialState = {
     post: [],
     comments: [],
+    tag: ""
 }
 
 export const postReducer = (state = initialState, action) => {
@@ -17,6 +18,11 @@ export const postReducer = (state = initialState, action) => {
             return {
                 ...state,
                 comments: action.payload
+            }
+        case SET_TAG:
+            return {
+                ...state,
+                tag: action.payload
             }
         default:
             return state
