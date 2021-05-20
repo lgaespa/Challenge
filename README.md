@@ -1,6 +1,6 @@
 # Iniciando el proyecto
 
-Para correr el proyecto, es necesario pararse en la carpeta SRC, y ejecutar npm install, después de que se instalan todas las dependecias, ejecutar el comando npm start.
+Para correr el proyecto, es necesario pararse en la carpeta raiz, y ejecutar npm install, después de que se instalan todas las dependecias, ejecutar el comando npm start.
 
 El proyecto está desplegado aquí:
 https://challenge-eight-livid.vercel.app/
