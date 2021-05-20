@@ -28,30 +28,32 @@ const Profile = ({ props }) => {
                 profile ?
                     <>
                         <div className="Profile_NameContainer">
-                            <h4>{profile?.firstName}</h4>
-                            <h4>{profile?.lastName}</h4>
+                            <h4 style={{ margin: "3px", marginRight: "5px" }}>{profile?.firstName}</h4>
+                            <h4 style={{ margin: "3px", marginRight: "5px" }}>{profile?.lastName}</h4>
                         </div>
 
 
                         <div>
-                            {profile?.location.country},
-                {profile?.location.city}
+                            <h4>
+                                {profile?.location.country},
+                            {profile?.location.city}
+                            </h4>
                         </div>
 
-                        <div>
-                            Email: {profile?.email}
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                            <h4 style={{ margin: "3px", marginRight: "5px" }}>Email:</h4> {profile?.email}
                         </div>
 
-                        <div>
-                            Phone: {profile?.phone}
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                            <h4 style={{ margin: "3px", marginRight: "5px" }}>Phone:</h4>  {profile?.phone}
                         </div>
 
-                        <div>
-                            Register Date: {profile?.registerDate.slice(0, 10)}
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                            <h4 style={{ margin: "3px", marginRight: "5px" }}> Register Date: </h4>{profile?.registerDate.slice(0, 10)}
                         </div>
 
-                        <div>
-                            Gender: {profile?.gender}
+                        <div style={{ display: "flex", alignItems: "center" }}>
+                            <h4 style={{ margin: "3px", marginRight: "5px" }}>Gender: </h4>{profile?.gender}
                         </div>
                     </>
                     :
