@@ -5,7 +5,7 @@ export const SET_TAG = 'SET_TAG';
 export const SAVE_COMMENTS = 'SAVE_COMMENTS';
 
 const BASE_URL = 'https://dummyapi.io/data/api';
-const APP_ID = '60a573ff453bff73e887ec5a';
+const APP_ID = process.env.REACT_APP_ID;
 
 
 export const getPost = () => {

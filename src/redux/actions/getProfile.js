@@ -1,7 +1,7 @@
 import axios from 'axios';
 export const SAVE_USER = 'SAVE_USER';
 const BASE_URL = 'https://dummyapi.io/data/api';
-const APP_ID = '60a573ff453bff73e887ec5a';
+const APP_ID = process.env.REACT_APP_ID;
 
 export const getProfile = (id) => {
 
