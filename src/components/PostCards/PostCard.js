@@ -36,6 +36,7 @@ const PostCard = ({ props }) => {
         )
     }
 
+    var i = 0;
     return (
         <div className="PostCard_cardContainer">
             <div>
@@ -54,7 +55,7 @@ const PostCard = ({ props }) => {
                     </button>
                     <div>
                         {
-                            props.link && <button className="linkButton" href="https://dummyapi.io/documentation/static-data-api">Enlace</button>
+                            props.link && <button className="linkButton" href={props.link}>Enlace</button>
                         }
                     </div>
                 </div>
@@ -88,7 +89,7 @@ const PostCard = ({ props }) => {
                 <div className="PostCard_tagsRow">
                     {
                         props.tags?.map(e => (
-                            <button onClick={() => setTagHandler(e)} className="PostCard_tagsContainer">
+                            <button key={i++} onClick={() => setTagHandler(e)} className="PostCard_tagsContainer">
                                 {e}
                             </button>
                         ))
