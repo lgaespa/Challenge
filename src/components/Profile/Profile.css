@@ -1,0 +1,26 @@
+.Profile_Container {
+  width: 360px;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  background-color: rgb(243, 243, 243);
+  padding: 40px;
+}
+
+.Profile_NameContainer {
+  display: flex;
+}
+
+.Profile_NameContainer * {
+  margin-right: 6px;
+  font-size: 30px;
+}
+.Profile_Picture {
+  width: 160px;
+  padding: 10px;
+  margin-left: 50%;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.336);
+}
